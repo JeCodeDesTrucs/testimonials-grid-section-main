@@ -1,0 +1,208 @@
+/*Import the font*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/*Set variables*/
+:root{
+/*Primary colors*/
+--moderate-violet: hsl(263, 55%, 52%);
+--very-dark-grayish-blue: hsl(217, 19%, 35%);
+--very-dark-blackish-blue: hsl(219, 29%, 14%);
+--white: hsl(0, 0%, 100%);
+--white-opacity: hsla(0, 0%, 100%, 50%);
+--white-opacity--p: hsla(0, 0%, 100%, 70%);
+
+/*Neutral colors*/
+--light-gray: hsl(0, 0%, 81%);
+--light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/*Set global value*/
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: var(--light-grayish-blue);
+}
+
+/*Set wrapper to center the elements with an min height for the mobile version*/
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+/*Set the grid for mobile*/
+.container {
+	display: grid;
+	grid-row: repeat(5, auto-fit);
+	gap: 1.5%;
+	padding: 1.5rem;
+}
+
+/*Add shadow on the article cards*/
+.testimonial {
+	box-shadow: 0 5px 20px var(--very-dark-grayish-blue);
+}
+
+/*Set most card graduation to variable color*/
+.testimonial__author-graduation{
+    color: var(--white-opacity);
+}
+
+/*Set cards title font*/
+.testimonial__title {
+	font-size: 1.55em;
+	font-weight: 600;
+}
+
+/*Set cards paragraphs font*/
+.testimonial__text {
+	font-size: 1em;
+	color: var(--white-opacity--p);
+}
+
+/*Set first card styles*/
+.testimonial:first-of-type {
+	background-color: var(--moderate-violet);
+	color: var(--white);
+	padding: 1.5rem 2rem;
+	border-radius: 10px;
+
+    background-image: url('../images/bg-pattern-quotation.svg');
+	background-repeat: no-repeat;
+	background-position-x: 87%;
+}
+
+.testimonial:first-of-type > .testimonial__author::before {
+	content: '';
+	background-image: url('../images/image-daniel.jpg');
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-size: 100%;
+	outline: var(--white-opacity) solid 0.1rem;
+	margin-right: 1.5rem;
+}
+
+/*Set second card styles*/
+.testimonial:nth-of-type(2){
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+	border-radius: 10px;
+}
+
+.testimonial:nth-of-type(2) > .testimonial__author::before{
+    content: '';
+	background-image: url('../images/image-jonathan.jpg');
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-size: 100%;
+	outline: var(--white-opacity) solid 0.1rem;
+	margin-right: 1.5rem;
+}
+
+/*Set third card styles*/
+.testimonial:nth-of-type(3){
+    background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
+    padding: 1.5rem 2rem;
+	border-radius: 10px;
+}
+
+.testimonial:nth-of-type(3) > .testimonial__author::before{
+    content: '';
+	background-image: url('../images/image-jeanette.jpg');
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-size: 100%;
+	outline: var(--white-opacity) solid 0.1rem;
+	margin-right: 1.5rem;
+}
+
+/*Set fourth card styles*/
+.testimonial:nth-of-type(4){
+    background-color: var(--very-dark-blackish-blue);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+	border-radius: 10px;
+}
+
+.testimonial:nth-of-type(4) > .testimonial__author::before{
+    content: '';
+	background-image: url('../images/image-patrick.jpg');
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-size: 100%;
+	outline: var(--white-opacity) solid 0.1rem;
+	margin-right: 1.5rem;
+}
+
+/*Set fifth card styles*/
+.testimonial:nth-of-type(5){
+    background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
+    padding: 1.5rem 2rem;
+	border-radius: 10px;
+}
+
+.testimonial:nth-of-type(5) > .testimonial__author::before{
+    content: '';
+	background-image: url('../images/image-kira.jpg');
+	float: left;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-size: 100%;
+	outline: var(--white-opacity) solid 0.1rem;
+	margin-right: 1.5rem;
+}
+
+/*Set fifth and third card special styles since their background is white*/
+.testimonial:nth-of-type(5) > .testimonial__author-graduation,
+.testimonial:nth-of-type(5) > .testimonial__text,
+.testimonial:nth-of-type(3) > .testimonial__author-graduation,
+.testimonial:nth-of-type(3) > .testimonial__text,
+.white-bg{
+    color: var(--very-dark-grayish-blue) !important;
+}
+
+/*Set styles for desktop versions*/
+@media (min-width: 1000px){
+
+	/*Set desktop grid with 4 columns, 2 rows and a 50px gap*/
+    .container {
+        display: grid;
+        grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+        gap: 50px;
+        padding: 1.5rem 9.5rem;
+    }
+
+	/*Set first card area on grid*/
+    .testimonial:first-of-type {
+        grid-area: 1 / 1 / 1 / 3;
+    }
+
+	/*Set last card area on grid*/
+    .testimonial:last-of-type {
+        grid-area: 1 / 4 / 3 / 5;
+    }
+
+	/*Set fourth card area on grid*/
+    .testimonial:nth-of-type(4){
+        grid-column: 2 / 4;
+    }
+
+	/*Thanks to the grid system the rest of the cards go in their places*/
+
+}
